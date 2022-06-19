@@ -14,11 +14,16 @@ function two(result) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let time = document.querySelector("#time");
+  let icon = document.querySelector("#icon");
   wind.innerHTML = `Wind: ${result.data.wind.speed}km/h`;
   city2.innerHTML = `${result.data.name}`;
   temp.innerHTML = `${temperature}`;
   humidity.innerHTML = `Humidity: ${result.data.main.humidity}%`;
   time.innerHTML = formateDate(result.data.dt * 1000);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${result.data.weather[0].icon}@2x.png`
+  );
 }
 function one(event) {
   event.preventDefault();
