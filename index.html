@@ -14,8 +14,53 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container"></div>
-    <h1>Weather</h1>
+    <div class="container" id="container">
+      <h1>Daily Weather</h1>
+      <form id="search">
+        <input
+          type="text"
+          id="city"
+          placeholder="City Name"
+          autocomplete="off"
+          autofocus="on"
+        />
+        <input type="submit" id="go" value="Go" />
+        <button id="current">Current</button>
+      </form>
+      <form>
+        <div class="row">
+          <div class="col-6">
+            <ul>
+              <li id="location">City</li>
+              <li id="date"></li>
+              <li id="time"></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-6" id="actual">
+          <span id="number">Temperature</span>
+          <span id="Celsius">C°</span>
+        </div>
+        <div class="col-6" id="stats">
+          <ul>
+            <li id="humidity">Humidity: %</li>
+            <li id="wind">Wind: km/h</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <span id="link">
+      <small
+        >Check out the ><a
+          href="https://github.com/Maria-G-Garcia/Week6"
+          id="github"
+        >
+          GitHub
+        </a>
+      </small></span
+    >
     <script src="src/app.js"></script>
   </body>
 </html>
