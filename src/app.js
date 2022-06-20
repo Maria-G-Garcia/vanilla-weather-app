@@ -8,13 +8,15 @@ function formateDate(timestamp) {
 
 function two(result) {
   let city2 = document.querySelector("#location");
-  let temperature = Math.round(result.data.main.temp);
+  let temperature = Math.round(celsiusTemperature);
   let temp = document.querySelector("#number");
   let condition = document.querySelector("#condition");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let time = document.querySelector("#time");
   let icon = document.querySelector("#icon");
+
+  celsiusTemperature = result.data.main.temp;
   wind.innerHTML = `Wind: ${result.data.wind.speed}km/h`;
   city2.innerHTML = `${result.data.name}`;
   temp.innerHTML = `${temperature}`;
@@ -34,8 +36,33 @@ function one(event) {
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9e503cb340e36b37cd62954f8e718ac7&units=metric`;
   axios.get(apiURL).then(two);
 }
+
 let gobutton = document.querySelector("#search");
 gobutton.addEventListener("submit", one);
+
+function changefahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#number");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+}
+function changecelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#number");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+}
+
+let celsiusTemperature = null;
+
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", changefahrenheit);
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", changecelsius);
 
 let hoy = document.querySelector("#date");
 let now = new Date();
