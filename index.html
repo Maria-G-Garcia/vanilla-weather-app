@@ -20,19 +20,19 @@
       <form id="search">
         <div class="row">
           <div class="col-9">
-        <input
-          type="search"
-          id="city"
-          placeholder="City Name"
-          autocomplete="off"
-          autofocus="on"
-        />
+            <input
+              type="search"
+              id="city"
+              placeholder="City Name"
+              autocomplete="off"
+              autofocus="on"
+            />
+          </div>
+          <div class="col-3">
+            <input type="submit" id="go" value="Go" class="btn btn-primary" />
+          </div>
         </div>
-        <div class="col-3">
-        <input type="submit" id="go" value="Go" class="btn btn-primary" />
-        </div>
-        </div>
-      </form>  
+      </form>
       <form>
         <div class="row">
           <div class="col-6">
@@ -45,11 +45,19 @@
         </div>
       </form>
       <div class="row">
-        <div class="col-6" id="actual">
-          <image src=""
-          id="icon"></image>
-          <span id="number">Temperature</span><span id="units">C°|<a href= >F°</a></span>
+        <div class="col-6">
+          <div class="clearfix weather-temperature">
+            <img src="" id="icon" class="float-left" />
+            <div class="float-left">
+              <strong id="number">0</strong
+              ><span class="units"
+                ><a href="#" id="celsius-link">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a></span
+              >
+            </div>
+          </div>
         </div>
+
         <div class="col-6" id="stats">
           <ul>
             <li id="condition">Condition</li>
@@ -62,7 +70,9 @@
     <span id="link">
       <small
         >Check out the
-        <a href="https://github.com/Maria-G-Garcia/vanilla-weather-app" id="github"
+        <a
+          href="https://github.com/Maria-G-Garcia/vanilla-weather-app"
+          id="github"
           >GitHub
         </a></small
       ></span
