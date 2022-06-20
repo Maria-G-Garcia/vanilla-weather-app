@@ -18,16 +18,21 @@
     <div class="container" id="container">
       <h1>Daily Weather</h1>
       <form id="search">
+        <div class="row">
+          <div class="col-9">
         <input
-          type="text"
+          type="search"
           id="city"
           placeholder="City Name"
           autocomplete="off"
           autofocus="on"
         />
-        <input type="submit" id="go" value="Go" />
-        
-      </form>
+        </div>
+        <div class="col-3">
+        <input type="submit" id="go" value="Go" class="btn btn-primary" />
+        </div>
+        </div>
+      </form>  
       <form>
         <div class="row">
           <div class="col-6">
@@ -42,13 +47,12 @@
       <div class="row">
         <div class="col-6" id="actual">
           <image src=""
-          id="icon">
-
-          </image>
+          id="icon"></image>
           <span id="number">Temperature</span><span id="units">C°|<a href= >F°</a></span>
         </div>
         <div class="col-6" id="stats">
           <ul>
+            <li id="condition">Condition</li>
             <li id="humidity">Humidity: %</li>
             <li id="wind">Wind: km/h</li>
           </ul>
