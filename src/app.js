@@ -7,10 +7,10 @@ function formateDate(timestamp) {
 }
 
 function two(result) {
-  console.log(result);
   let city2 = document.querySelector("#location");
   let temperature = Math.round(result.data.main.temp);
   let temp = document.querySelector("#number");
+  let condition = document.querySelector("#condition");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let time = document.querySelector("#time");
@@ -18,6 +18,7 @@ function two(result) {
   wind.innerHTML = `Wind: ${result.data.wind.speed}km/h`;
   city2.innerHTML = `${result.data.name}`;
   temp.innerHTML = `${temperature}`;
+  condition.innerHTML = `${result.data.weather[0].description}`;
   humidity.innerHTML = `Humidity: ${result.data.main.humidity}%`;
   time.innerHTML = formateDate(result.data.dt * 1000);
   icon.setAttribute(
