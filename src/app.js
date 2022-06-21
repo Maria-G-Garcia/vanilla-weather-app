@@ -7,6 +7,7 @@ function formateDate(timestamp) {
 }
 
 function two(result) {
+  celsiusTemperature = result.data.main.temp;
   let city2 = document.querySelector("#location");
   let temperature = Math.round(celsiusTemperature);
   let temp = document.querySelector("#number");
@@ -16,7 +17,6 @@ function two(result) {
   let time = document.querySelector("#time");
   let icon = document.querySelector("#icon");
 
-  celsiusTemperature = result.data.main.temp;
   wind.innerHTML = `Wind: ${result.data.wind.speed}km/h`;
   city2.innerHTML = `${result.data.name}`;
   temp.innerHTML = `${temperature}`;
@@ -37,9 +37,6 @@ function one(event) {
   axios.get(apiURL).then(two);
 }
 
-let gobutton = document.querySelector("#search");
-gobutton.addEventListener("submit", one);
-
 function changefahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
@@ -57,6 +54,9 @@ function changecelsius(event) {
 }
 
 let celsiusTemperature = null;
+
+let gobutton = document.querySelector("#search");
+gobutton.addEventListener("submit", one);
 
 let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", changefahrenheit);
