@@ -67,3 +67,23 @@ ul {
   margin: 20px auto;
   font-size: 20px;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.waether-forecast-date {
+  font-size: 16px;
+  color: 000000;
+  opacity: 0.6;
+}
+
+.max {
+  font-size: 13px;
+  color: black;
+}
+.min {
+  opacity: 0.5;
+  font-size: 13px;
+}
