@@ -27,16 +27,16 @@ form {
   color: #70757a;
   text-align: center;
 }
-#weather-temperature.units {
+.units {
   font-size: 16px;
   position: relative;
   top: -25px;
 }
-#celsius.active {
+.active {
   color: rgb(33, 33, 33);
   cursor: default;
 }
-#celsius.active.hover {
+.active.hover {
   text-decoration: none;
 }
 
