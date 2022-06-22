@@ -37,6 +37,39 @@ function one(event) {
   axios.get(apiURL).then(two);
 }
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
+     <div class="col-2">
+       <div class="waether-forecast-date">Thu</div>
+       <img src="" />
+       <div class="weather-forecast-temp">
+        <span class="max">18°</span>
+        <span class="min">12°</span>
+      </div>
+    </div>
+    
+   `;
+  forecastHTML =
+    forecastHTML +
+    `
+     <div class="col-2">
+       <div class="waether-forecast-date">Thu</div>
+       <img src="" />
+       <div class="weather-forecast-temp">
+         <span class="max">18°</span>
+         <span class="min">12°</span>
+      </div>
+     </div>
+    `;
+  forecastHTML = forecastHTML = `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 function changefahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
@@ -54,6 +87,7 @@ function changecelsius(event) {
 }
 
 let celsiusTemperature = null;
+displayForecast();
 
 let gobutton = document.querySelector("#search");
 gobutton.addEventListener("submit", one);
