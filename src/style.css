@@ -1,6 +1,14 @@
+body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/462/original/pexels-pixabay-531767.jpg?1656103396");
+  background-color: #cccccc;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
 #container {
-  max-width: 600px;
   display: block;
+  max-width: 600px;
   margin: 30px auto;
   padding: 30px;
   border: 2px solid #dadde1;
