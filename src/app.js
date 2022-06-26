@@ -27,7 +27,7 @@ function two(result) {
   time.innerHTML = formateDate(result.data.dt * 1000);
   condition.innerHTML = `${result.data.weather[0].description}`;
   humidity.innerHTML = `Humidity: ${result.data.main.humidity}%`;
-  wind.innerHTML = `Wind:${Math.round(result.data.wind.speed)}mph`;
+  wind.innerHTML = `Wind:${Math.round(result.data.wind.speed)} mph`;
   icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${result.data.weather[0].icon}@2x.png`
@@ -73,7 +73,6 @@ function displayForecast(response) {
     </div>
    `;
     }
-    console.log(forecastDay.dt);
   });
 
   forecastHTML = forecastHTML + `</div>`;
